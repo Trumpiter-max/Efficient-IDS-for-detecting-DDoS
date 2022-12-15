@@ -117,7 +117,7 @@ Get started from [here](https://pktgen-dpdk.readthedocs.io/en/latest/getting_sta
       apt-get install -y libssl-dev iproute2 tcpdump linux-headers-`uname -r`  linux-image-`uname -r` uml-utilities libelf-dev
 
    ```
-- Install requirements
+- Install library
    ```
       apt-get install libpcap-dev build-essential make git wget curl net-tools meson python3-pip libnuma-dev sphinx-common  libcli-dev libcommon-sense-perl
       pip3 install pyelftools
@@ -138,6 +138,43 @@ Get started from [here](https://pktgen-dpdk.readthedocs.io/en/latest/getting_sta
    ```
 ## PacketGen
 
+## Linux-br
+
+   See on this [video](https://www.youtube.com/watch?v=Js_140tDlVI)
+
+
 ## DUT 
+
+## Faucet
+
+We use this image at [here](https://hub.docker.com/r/faucetsdn/faucet/tags?page=1&ordering=last_updated)
+
+Get started with [this](https://docs.faucet.nz/en/latest/quickstart.html)
+
+```sh
+   mkdir -p /var/log/faucet/
+   docker pull faucet/faucet:latest
+   sudo docker run -d \
+    --name faucet \
+    --restart=always \
+    -v /etc/faucet/:/etc/faucet/ \
+    -v /var/log/faucet/:/var/log/faucet/ \
+    -p 6653:6653 \
+    -p 9302:9302 \
+    faucet/faucet
+```
+
+
+## Prometheus
+
+Get started with [this](https://linuxopsys.com/topics/install-prometheus-on-ubuntu)
+
+In this case, we use version 2.40.6 of Prometheus
+
+## Grafana
+
+Get started with [this](https://grafana.com/docs/grafana/latest/installation/debian/)
+
+
 
 
